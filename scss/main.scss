@@ -87,7 +87,7 @@ $h4: 20px;
   .pagination {
     z-index: 3;
     position: absolute;
-    bottom: 8%;
+    bottom: 80px;
     display: flex;
 
     justify-content: center;
@@ -235,7 +235,7 @@ $h4: 20px;
 
 #notice {
   background-color: rgb(226, 226, 226);
-  margin-top: 100px;
+
   overflow: hidden;
   .btns {
     top: 60px;
