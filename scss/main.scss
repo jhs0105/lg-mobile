@@ -173,7 +173,7 @@ $h4: 20px;
           // //ease-out: 점점 느려지는...
           // transition-delay: 0.5s; //1s = 1000ms
 
-          transition: all 0.5s ease-in-out; //앞이 duration , 뒤는 delay로 인식한다.
+          //transition: all 0.5s ease-in-out; //앞이 duration , 뒤는 delay로 인식한다.
 
           h3 {
             font-size: clamp(18px, 10vw, 24px);
