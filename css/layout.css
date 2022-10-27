@@ -20,6 +20,8 @@ button {
   width: 100%;
   margin: 0 auto;
   position: relative;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 header {
@@ -129,6 +131,17 @@ header .util .btn-all span:nth-child(3) {
   font-size: 18px;
   box-sizing: border-box;
   /* background-color: pink; */
+  position: relative;
+}
+#gnb .list > li .depth01.on i {
+  transform: translateY(-50%) rotate(-180deg);
+}
+#gnb .list > li .depth01 i {
+  transition: all 0.25s ease;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 #gnb .list > li .depth01:before {
   content: "";

@@ -110,7 +110,7 @@ $h4: 20px;
 
 //공통으로 적용할때 class를 따로 빼서 아래와 같이 정리하면 편하다.
 .contents-box {
-  padding: 150px 0px;
+  padding: 40px 0px;
   // background-color: #fff;
   // background-image: url(" ");
   // background-position: 50%;
@@ -119,10 +119,22 @@ $h4: 20px;
   //font도 합쳐서 쓸수 있음. 그러나 그렇게 잘 사용 안함
 
   h2 {
-    font-size: $h2;
+    font-size: clamp(18px, 10vw, 24px);
     color: $main-color;
     font-weight: 700;
     margin-bottom: 30px;
+  }
+  .banner {
+    margin-top: 80px;
+  }
+  .btns {
+    position: absolute;
+    right: 20px;
+    top: 120px;
+    i {
+      font-size: 24px;
+      color: $main-color;
+    }
   }
 }
 
@@ -133,8 +145,7 @@ $h4: 20px;
     margin-top: 50px;
     ul {
       li {
-        height: 400px;
-        width: 50%;
+        height: 300px;
         position: relative;
         overflow: hidden; //부모 영역 벗어나면 사라진다
         &:hover {
@@ -150,8 +161,9 @@ $h4: 20px;
         .txt {
           position: absolute;
           color: #fff;
-          left: 50px;
-          bottom: -50px;
+          left: 20px;
+          right: 20px;
+          bottom: 20px;
           // transition-property: bottom, color;
           // transition-duration: 0.5s;
           // transition-timing-function: ease-in-out;
@@ -164,35 +176,32 @@ $h4: 20px;
           transition: all 0.5s ease-in-out; //앞이 duration , 뒤는 delay로 인식한다.
 
           h3 {
-            font-size: $h3 * 1.5;
-            margin-bottom: 40px;
+            font-size: clamp(18px, 10vw, 24px);
+            margin-bottom: 20px;
             font-weight: 500;
           }
           p {
             line-height: 1.5;
+            br {
+              content: ""; //br태그 무력화됨
+            }
           }
         }
       }
-    }
-  }
-  .btns {
-    position: absolute;
-    right: 0;
-    top: 50px;
-    i {
-      font-size: 40px;
-      color: $main-color;
     }
   }
 }
 
 #activity {
   overflow: hidden;
+  .btns {
+    top: 60px;
+  }
   .news {
     margin-top: 100px;
     ul {
       li {
-        height: 500px;
+        height: auto;
         // width: 300px;
         img {
           height: 300px;
@@ -206,7 +215,7 @@ $h4: 20px;
           margin-top: 10px;
           line-height: 1.5;
           h3 {
-            font-size: 20px;
+            font-size: clamp(18px, 5vw, 24px);
             font-weight: 500;
             // @include ellipsis;
             @include multiElilipsis(2, 1.2);
@@ -222,21 +231,15 @@ $h4: 20px;
       }
     }
   }
-  .btn2 {
-    position: absolute;
-    right: 0;
-    top: 50px;
-    i {
-      font-size: 40px;
-      color: $main-color;
-    }
-  }
 }
 
 #notice {
   background-color: rgb(226, 226, 226);
   margin-top: 100px;
   overflow: hidden;
+  .btns {
+    top: 60px;
+  }
   .container {
     overflow: hidden;
   }
@@ -256,7 +259,7 @@ $h4: 20px;
         color: grey;
         line-height: 1.5;
         margin-top: 20px;
-        @include multiElilipsis(4);
+        @include multiElilipsis(3);
       }
       .date {
         margin-top: 40px;
@@ -267,23 +270,15 @@ $h4: 20px;
       }
     }
   }
-  .btn3 {
-    position: absolute;
-    right: 0;
-    i {
-      font-size: 40px;
-      color: $main-color;
-    }
-  }
 }
 
 footer {
   #family-site {
-    margin: 100px 0;
+    margin: 30px 0;
+    overflow: hidden;
     ul {
-      display: flex;
-      justify-content: space-between;
       li {
+        width: auto;
         img {
           height: 30px;
         }
@@ -294,17 +289,20 @@ footer {
 #footer {
   background-color: #000;
   color: white;
-  padding: 100px 0;
+  padding: 30px 0;
   .container {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
     .info {
+      font-size: 14px;
       .util {
         margin-bottom: 40px;
         ul {
           display: flex;
+
+          justify-content: space-between;
           li {
-            margin-right: 30px;
           }
         }
       }
@@ -316,6 +314,9 @@ footer {
       }
     }
     .sns {
+      margin-top: 40px;
+      display: flex;
+      justify-content: space-between;
       ul {
         display: flex;
         margin-bottom: 20px;
@@ -325,8 +326,8 @@ footer {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 50px;
-            width: 50px;
+            height: 40px;
+            width: 40px;
             border-radius: 100px;
             background-color: #333;
             transition: all 0.5s ease;
@@ -338,7 +339,7 @@ footer {
       }
       .nts {
         img {
-          height: 50px;
+          height: 40px;
         }
       }
     }

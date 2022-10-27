@@ -86,13 +86,25 @@
 }
 
 .contents-box {
-  padding: 150px 0px;
+  padding: 40px 0px;
 }
 .contents-box h2 {
-  font-size: 36px;
+  font-size: clamp(18px, 10vw, 24px);
   color: #dd3156;
   font-weight: 700;
   margin-bottom: 30px;
+}
+.contents-box .banner {
+  margin-top: 80px;
+}
+.contents-box .btns {
+  position: absolute;
+  right: 20px;
+  top: 120px;
+}
+.contents-box .btns i {
+  font-size: 24px;
+  color: #dd3156;
 }
 
 #introduce {
@@ -103,8 +115,7 @@
   margin-top: 50px;
 }
 #introduce .banner ul li {
-  height: 400px;
-  width: 50%;
+  height: 300px;
   position: relative;
   overflow: hidden;
 }
@@ -119,36 +130,34 @@
 #introduce .banner ul li .txt {
   position: absolute;
   color: #fff;
-  left: 50px;
-  bottom: -50px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
   transition: all 0.5s ease-in-out;
 }
 #introduce .banner ul li .txt h3 {
-  font-size: 36px;
-  margin-bottom: 40px;
+  font-size: clamp(18px, 10vw, 24px);
+  margin-bottom: 20px;
   font-weight: 500;
 }
 #introduce .banner ul li .txt p {
   line-height: 1.5;
 }
-#introduce .btns {
-  position: absolute;
-  right: 0;
-  top: 50px;
-}
-#introduce .btns i {
-  font-size: 40px;
-  color: #dd3156;
+#introduce .banner ul li .txt p br {
+  content: "";
 }
 
 #activity {
   overflow: hidden;
 }
+#activity .btns {
+  top: 60px;
+}
 #activity .news {
   margin-top: 100px;
 }
 #activity .news ul li {
-  height: 500px;
+  height: auto;
 }
 #activity .news ul li img {
   height: 300px;
@@ -163,7 +172,7 @@
   line-height: 1.5;
 }
 #activity .news ul li .txt h3 {
-  font-size: 20px;
+  font-size: clamp(18px, 5vw, 24px);
   font-weight: 500;
   overflow: hidden;
   display: -webkit-box;
@@ -179,20 +188,14 @@
 #activity .news ul li .txt p span {
   color: red;
 }
-#activity .btn2 {
-  position: absolute;
-  right: 0;
-  top: 50px;
-}
-#activity .btn2 i {
-  font-size: 40px;
-  color: #dd3156;
-}
 
 #notice {
   background-color: rgb(226, 226, 226);
   margin-top: 100px;
   overflow: hidden;
+}
+#notice .btns {
+  top: 60px;
 }
 #notice .container {
   overflow: hidden;
@@ -220,9 +223,9 @@
   margin-top: 20px;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-  height: 6em;
+  height: 4.5em;
   line-height: 1.5;
 }
 #notice .banner li .date {
@@ -232,21 +235,13 @@
 #notice .banner li .date a {
   color: red;
 }
-#notice .btn3 {
-  position: absolute;
-  right: 0;
-}
-#notice .btn3 i {
-  font-size: 40px;
-  color: #dd3156;
-}
 
 footer #family-site {
-  margin: 100px 0;
+  margin: 30px 0;
+  overflow: hidden;
 }
-footer #family-site ul {
-  display: flex;
-  justify-content: space-between;
+footer #family-site ul li {
+  width: auto;
 }
 footer #family-site ul li img {
   height: 30px;
@@ -255,26 +250,33 @@ footer #family-site ul li img {
 #footer {
   background-color: #000;
   color: white;
-  padding: 100px 0;
+  padding: 30px 0;
 }
 #footer .container {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
+}
+#footer .container .info {
+  font-size: 14px;
 }
 #footer .container .info .util {
   margin-bottom: 40px;
 }
 #footer .container .info .util ul {
   display: flex;
-}
-#footer .container .info .util ul li {
-  margin-right: 30px;
+  justify-content: space-between;
 }
 #footer .container .info .address {
   margin-bottom: 40px;
 }
 #footer .container .info .address ul li {
   margin: 10px 0;
+}
+#footer .container .sns {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
 }
 #footer .container .sns ul {
   display: flex;
@@ -287,8 +289,8 @@ footer #family-site ul li img {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   border-radius: 100px;
   background-color: #333;
   transition: all 0.5s ease;
@@ -297,5 +299,5 @@ footer #family-site ul li img {
   background-color: #dd3156;
 }
 #footer .container .sns .nts img {
-  height: 50px;
+  height: 40px;
 }
