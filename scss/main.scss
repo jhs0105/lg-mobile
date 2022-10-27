@@ -33,6 +33,8 @@ $h4: 20px;
         left: 60px;
         top: 50%;
         font-size: 16px;
+        transform: translateY(-50%);
+        font-size: clamp(16px, 4vw, 24px);
         p {
           margin-bottom: 15px;
         }
@@ -46,7 +48,8 @@ $h4: 20px;
           margin-top: 30px;
         }
         strong {
-          font-size: 20px;
+          font-size: clamp(20px, 10vw, 48px);
+          //clamp는 숫자 3개를 쓸 수 있는데 최소크기, 바뀌는 크기, 최대크기 이다. 10vw로 보이지만 48px를 넘지 않고, 20px보다 작아지지 않는다. 반응형때 많이 쓰인다.
           font-weight: 700;
         }
       }

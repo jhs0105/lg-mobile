@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="../css/swiper-bundle.css" />
     <link rel="stylesheet" href="../css/layout.css" />
     <link rel="stylesheet" href="../css/main.css" />
-
+    
+    <script src="../js/jquery-3.6.1.min.js"></script>
     <script src="../js/swiper-bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/5f5f753b4c.js" crossorigin="anonymous"></script>
   </head>
@@ -419,26 +420,49 @@
   </body>
 
   <script>
-    const gnb=document.querySelector("#gnb");
-    const btnAll=document.querySelector("#header .btn-all")
+    // const gnb=document.querySelector("#gnb"); 
+    // //일반적인 태그를 찾아주는.
+    // const btnAll = document.querySelector("#header .btn-all");
+    // //const allDepth01 = document.querySelectorAll("#gnb .depth01");
 
-    btnAll.addEventListener("click",function(){
-      // if(btnAll.classList.contains("on")){
-      //   btnAll.classList.remove("on");
-      // }else{
-      //   btnAll.classList.add("on");
-      // }
-      // if(gnb.classList.contains("on")){
-      //   gnb.classList.remove("on");
-      // }else{
-      //   gnb.classList.add("on")
-      // }
-      btnAll.classList.toggle("on");
-      gnb.classList.toggle("on")
-    })
+    
+    //jQuery 사용
+    const gnb = jQuery("#gnb"); 
+    // jQuery 에서 제공해주는 함수를 사용할 수 있다.
+    const btnAll = $("#header .btn-all");
+    const depth01 = $("#gnb .depth01");
+    const depth02 = $("#gnb .depth02");
+  
+
+    // btnAll.addEventListener("click",function(){
+    //   // if(btnAll.classList.contains("on")){
+    //   //   btnAll.classList.remove("on");
+    //   // }else{
+    //   //   btnAll.classList.add("on");
+    //   // }
+    //   // if(gnb.classList.contains("on")){
+    //   //   gnb.classList.remove("on");
+    //   // }else{
+    //   //   gnb.classList.add("on")
+    //   // }
+    //   btnAll.classList.toggle("on");
+    //   gnb.classList.toggle("on")
+    // })
+
+    btnAll.on("click", function(){
+      btnAll.toggleClass("on");
+      gnb.toggleClass("on");
+    });
+
+    depth01.on("click", function(e){
+      e.preventDefault(); // 이벤트를 막는 것. a태그가 가지고 있는 링크를 막겠다. 그래야 넘어가지 않는다.
+      //console.log("depth01 click");
+      const depth02= $(this).next(); //여기서 this는 click하는 것을 가르킨다. jquery 로 감싸주면 jquery가 제공하는 함수를 쓸 수 있고. next는 형제관계를 찾아준다. 이렇게 쓰면 모든 depth02를 찾아주는 것이 아닌 클릭한 것의 depth02를 찾아준다.
+      depth02.slideToggle(); //열리고 닫고 할수 있음
+    });
 
     const mainSlider = new Swiper("#main-visual", {
-      effect: "cube",
+      effect: "fade",
       loop: true,
       speed: 500,
       autoplay: {
